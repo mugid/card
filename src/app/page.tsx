@@ -49,7 +49,7 @@ export default function Home() {
       <div className="mb-12 flex flex-row gap-4">
         <div className="flex-1 leading-snug space-y-4 bg-[#2b2b2b] p-4 rounded-lg">
           <p>
-            I&apos;m a frontend developer and aspiring designer from Almaty,
+            I&apos;m a frontend developer and designer from Almaty,
             Kazakhstan. I use{" "}
             <span className="text-[#fff3b0]">
               React, Next.js, and Tailwind CSS
