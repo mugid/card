@@ -4,9 +4,9 @@ import Image from "next/image";
 export default function Home() {
   const projects = [
     {
-      name: "distr",
+      name: "distr.",
       description:
-        "Generates distribution charts and tables based on input information. Currently involves bynomial and puasson distributions.",
+        "Generates distribution charts and tables based on input information. Currently involves bynomial and poisson distributions.",
       href: "https://problify.vercel.app",
       dates: "2024",
     },
