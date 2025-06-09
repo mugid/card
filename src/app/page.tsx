@@ -4,19 +4,19 @@ import Image from "next/image";
 export default function Home() {
   const projects = [
     {
+      name: "keyano",
+      description:
+        "An audio recorder for piano generated music.",
+      href: "https://keyano.vercel.app",
+      dates: "2025",
+    },
+    {
       name: "distr.",
       description:
         "Generates distribution charts and tables based on input information. Currently involves bynomial and poisson distributions.",
       href: "https://problify.vercel.app",
       dates: "2024",
     },
-    {
-      name: "keyano",
-      description:
-        "An audio recorder for piano generated music.",
-      href: "https://keyano.vercel.app",
-      dates: "2025",
-    }
   ];
 
   return (
@@ -86,9 +86,9 @@ export default function Home() {
         <Image width={36} height={36} src="favicon.svg" alt="icon image" />
         <h1 className="font-bold">Projects</h1>
       </div>
-      <div className="mb-6 space-y-4 leading-snug bg-[#2b2b2b] p-4 rounded-lg">
+      <div className="mb-6 space-y-4 leading-snug">
         {projects.map((p, id) => (
-          <div key={id} className="flex flex-col gap-3">
+          <div key={id} className="flex flex-col gap-3 bg-[#2b2b2b] p-4 rounded-lg">
             <div className="flex justify-between items-center">
               <a
                 href={p.href}
