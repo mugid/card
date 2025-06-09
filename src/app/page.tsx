@@ -10,6 +10,13 @@ export default function Home() {
       href: "https://problify.vercel.app",
       dates: "2024",
     },
+    {
+      name: "keyano",
+      description:
+        "An audio recorder for piano generated music.",
+      href: "https://keyano.vercel.app",
+      dates: "2025",
+    }
   ];
 
   return (
