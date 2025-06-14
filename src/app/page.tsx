@@ -17,6 +17,12 @@ export default function Home() {
       href: "https://problify.vercel.app",
       dates: "2024",
     },
+    {
+      name: "feynapp",
+      description: "App for an effective learning based on Feynmann technique with an implementation of AI",
+      href: "https://github.com/mugid/feynapp",
+      dates: "2023",
+    }
   ];
 
   return (
