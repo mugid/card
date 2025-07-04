@@ -14,7 +14,7 @@ export default function Home() {
       name: "distr.",
       description:
         "Generates distribution charts and tables based on input information. Currently involves bynomial and poisson distributions.",
-      href: "https://problify.vercel.app",
+      href: "https://distr.vercel.app",
       dates: "2024",
     },
     {
