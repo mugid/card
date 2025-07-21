@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Skills() {
   const skills: string[] = [
@@ -33,12 +34,15 @@ export default function Skills() {
       </div>
       <div className="flex flex-wrap gap-2 columns-2xl">
         {skills.map((skill, id) => (
-          <div
+          <motion.div
             key={id}
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1}}
+            transition={{ delay: id * 0.07, duration: 0.4}}
             className="font-mono text-sm bg-foreground/60 hover:bg-primary/80 transition-all text-background py-1 px-2 w-max rounded-md cursor-pointer"
           >
             {skill}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
