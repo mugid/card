@@ -5,12 +5,11 @@ export default function About() {
     <div className="mt-12 flex flex-row gap-4">
       <div className="flex-1 leading-snug space-y-4 text-foreground/60 rounded-lg">
         <p>
-          I&apos;m a frontend developer and designer from Almaty, Kazakhstan. I
-          use{" "}
+          I&apos;m a frontend developer and designer from Almaty, Kazakhstan. Being in love-hate relationship with{" "}
           <span className="text-primary font-semibold">
-            React, Next.js, and Tailwind CSS
+            React and Next.js,
           </span>{" "}
-          to build clean, responsive web apps — often blending development with
+          I build clean, responsive web apps — often blending development with
           design.
         </p>
         <p>
@@ -28,6 +27,7 @@ export default function About() {
           >
             here
           </Link>
+          {" "} - currently I can&apos;t force myself to collect my works
         </p>
       </div>
     </div>
