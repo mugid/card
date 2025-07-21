@@ -15,9 +15,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-
   title: "Bek Slambek | Card",
   description: "Software engineer and  designer based in Almaty, Kazakhstan.",
+  openGraph: {
+    title: "Bek Slambek | Card",
+    description: "Software engineer and designer based in Almaty, Kazakhstan.",
+    url: "https://sbek.tech",
+    siteName: "Bek Slambek",
+    images: [
+      {
+        url: "https://sbek.tech/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Bek Slambek's Open Graph Image",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
