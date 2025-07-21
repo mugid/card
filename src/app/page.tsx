@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
-import About from "@/components/profile";
+import Profile from "@/components/profile";
+import About from "@/components/about";
 
 export default function Home() {
   const projects = [
@@ -29,35 +29,7 @@ export default function Home() {
   return (
     <main className="min-h-screen mx-auto max-w-2xl">
       <Profile />
-      <div className="mb-12 flex flex-row gap-4">
-        <div className="flex-1 leading-snug space-y-4 bg-[#2b2b2b] p-4 rounded-lg">
-          <p>
-            I&apos;m a frontend developer and designer from Almaty,
-            Kazakhstan. I use{" "}
-            <span className="text-[#fff3b0]">
-              React, Next.js, and Tailwind CSS
-            </span>{" "}
-            to build clean, responsive web apps — often blending development
-            with design.
-          </p>
-          <p>
-            I&apos;m passionate about learning fast, building things that people
-            actually use, and creating experiences that feel intuitive and
-            thoughtful.
-          </p>
-          <p>
-            If you want to explore the design I do, check it out{" "}
-            <Link
-              href="https://comingsoon.com"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="hover:underline underline-offset-2 text-[#fff3b0]"
-            >
-              here
-            </Link>
-          </p>
-        </div>
-      </div>
+      <About />
       <div className="flex flex-row justify-end items-center gap-0.5">
         <Image width={36} height={36} src="favicon.svg" alt="icon image" />
         <h1 className="font-bold">Projects</h1>
