@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import About from "@/components/profile";
 
 export default function Home() {
   const projects = [
@@ -26,39 +27,8 @@ export default function Home() {
   ];
 
   return (
-    <main className="flex flex-col min-h-screen mx-auto max-w-2xl px-6 py-12">
-      <div className="flex flex-row justify-between items-center mt-12 mb-4">
-        <div className="flex flex-row items-center gap-0.5">
-          <Image width={36} height={36} src="favicon.svg" alt="icon image" />
-          <h1 className="font-bold">Bek Slambek</h1>
-        </div>
-        <div className="flex flex-row justify-between gap-3">
-          <Link
-            href="./resume.pdf"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="hover:underline underline-offset-2"
-          >
-            /resume
-          </Link>{" "}
-          <Link
-            href="https://github.com/mugid"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="hover:underline underline-offset-2"
-          >
-            /github
-          </Link>{" "}
-          <Link
-            href="https://linkedin.com/in/sbek22"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="hover:underline underline-offset-2"
-          >
-            /linkedin
-          </Link>
-        </div>
-      </div>
+    <main className="min-h-screen mx-auto max-w-2xl">
+      <Profile />
       <div className="mb-12 flex flex-row gap-4">
         <div className="flex-1 leading-snug space-y-4 bg-[#2b2b2b] p-4 rounded-lg">
           <p>
