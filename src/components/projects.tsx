@@ -23,11 +23,11 @@ export default function Projects() {
 
   return (
     <div className="mt-12">
-      <div className="flex flex-row justify-start items-center gap-1 mb-4">
+      <div className="flex flex-row justify-start items-center gap-2 mb-4">
         <Image width={24} height={24} src="icon.svg" alt="icon image" />
         <h1 className="font-semibold text-xl">Projects</h1>
       </div>
-      <div className="leading-snug md:columns-2 ">
+      <div className="leading-snug md:columns-2">
         {projects.map((p, id) => (
           <div
             key={id}
