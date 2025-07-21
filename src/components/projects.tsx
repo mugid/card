@@ -40,7 +40,7 @@ export default function Projects() {
               href={p.href}
               target="_blank"
               rel="noreferrer"
-              className="absolute top-[100%] h-full w-full bg-[#181818]/80 rounded-lg group-hover:top-0 transition-all flex items-center justify-center"
+              className="absolute top-[100%] h-full w-full bg-[#181818]/80 rounded-lg group-hover:top-0 transition-all duration-500 flex items-center justify-center"
             >
              <span className="text-primary italic">view more...</span>
             </a>
