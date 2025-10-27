@@ -14,6 +14,12 @@ export default function Projects() {
       href: "https://distr.vercel.app",
     },
     {
+      name: "higgsprompt",
+      description:
+        "A web marketplace for AI prompt engineers. The backend is done with FastAPI, and the database is managed with Supabase",
+      href: "https://higgsprompt.vercel.app",
+    },
+    {
       name: "feynapp",
       description:
         "App for an effective learning based on Feynmann technique with an implementation of AI",

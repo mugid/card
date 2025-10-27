@@ -18,7 +18,7 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
-      <div className="my-12">
+      <div className="my-10">
         <p className="text-center">
           contact me via telegram:{" "}
           <a

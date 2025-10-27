@@ -5,7 +5,7 @@ export default function About() {
     <div className="mt-12 flex flex-row gap-4">
       <div className="flex-1 leading-snug space-y-4 text-foreground/60 rounded-lg">
         <p>
-          I&apos;m a frontend developer and designer from Almaty, Kazakhstan. Being in love-hate relationship with{" "}
+          I&apos;m a frontend developer and designer. Currently, a cs student at Nazarbayev University. Being in love-hate relationship with{" "}
           <span className="text-primary font-semibold">
             React and Next.js,
           </span>{" "}

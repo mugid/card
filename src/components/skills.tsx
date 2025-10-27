@@ -24,6 +24,8 @@ export default function Skills() {
     "python",
     "figma",
     "illustrator",
+    "framer",
+    "ui/ux",
   ];
 
   return (
