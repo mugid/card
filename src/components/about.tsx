@@ -20,14 +20,13 @@ export default function About() {
         <p>
           If you want to explore the design I do, check it out{" "}
           <Link
-            href="https://comingsoon.com"
+            href="https://contra.com/bek_slambek_exnck1xg"
             rel="noopener noreferrer"
             target="_blank"
             className="hover:border-b-1 transition-all text-primary font-semibold"
           >
             here
           </Link>
-          {" "} - currently I can&apos;t force myself to collect my works
         </p>
       </div>
     </div>
