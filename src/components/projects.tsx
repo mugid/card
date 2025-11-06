@@ -35,22 +35,16 @@ export default function Projects() {
       </div>
       <div className="leading-snug md:columns-2">
         {projects.map((p, id) => (
-          <div
-            key={id}
-            className="group relative flex flex-col justify-end gap-2 h-min bg-[#181818] p-4 pt-25 mb-4 rounded-lg overflow-hidden"
-          >
-            <h1 className="font-semibold">{p.name}</h1>
-            <p className="text-foreground/60">{p.description}</p>
+          <a key={id} href={p.href} target="_blank" rel="noreferrer">
+            <div className="group relative flex flex-col justify-end gap-2 h-min bg-[#181818] p-4 pt-25 mb-4 rounded-lg overflow-hidden">
+              <h1 className="font-semibold">{p.name}</h1>
+              <p className="text-foreground/60">{p.description}</p>
 
-            <a
-              href={p.href}
-              target="_blank"
-              rel="noreferrer"
-              className="absolute top-[100%] h-full w-full bg-[#181818]/80 rounded-lg group-hover:top-0 transition-all duration-500 flex items-center justify-center"
-            >
-             <span className="text-primary italic">view more...</span>
-            </a>
-          </div>
+              <div className="absolute top-[100%] h-full w-full bg-[#181818]/80 rounded-lg group-hover:top-0 transition-all duration-500 flex items-center justify-center">
+                <span className="text-primary italic">view more...</span>
+              </div>
+            </div>
+          </a>
         ))}
       </div>
     </div>
