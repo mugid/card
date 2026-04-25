@@ -9,7 +9,7 @@ export default function Profile() {
           Bek Slambek
         </h1>
         <p className="text-md font-semibold italic text-foreground/50">
-          design & build
+          designer & engineer
         </p>
       </div>
       <div className="flex flex-row justify-between gap-x-3">

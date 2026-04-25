@@ -1,32 +1,11 @@
+"use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { useSiteContent } from "@/hooks/use-site-content";
+
 export default function Skills() {
-  const skills: string[] = [
-    "react",
-    "next.js",
-    "tailwindcss",
-    "shadcn/ui",
-    "drizzle",
-    "prisma",
-    "postgresql",
-    "supabase",
-    "vercel",
-    "motion",
-    "zustand",
-    "javascript",
-    "typescript",
-    "node.js",
-    "html",
-    "css",
-    "git",
-    "github",
-    "python",
-    "figma",
-    "illustrator",
-    "framer",
-    "ui/ux",
-  ];
+  const { skills } = useSiteContent();
 
   return (
     <div className="mt-12">
@@ -37,10 +16,10 @@ export default function Skills() {
       <div className="flex flex-wrap gap-2 columns-2xl">
         {skills.map((skill, id) => (
           <motion.div
-            key={id}
-            initial={{ opacity: 0}}
-            animate={{ opacity: 1}}
-            transition={{ delay: id * 0.07, duration: 0.4}}
+            key={`${skill}-${id}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: id * 0.07, duration: 0.4 }}
             className="font-mono text-sm bg-foreground hover:bg-primary transition-all text-background py-1 px-2 w-max rounded-md cursor-pointer"
           >
             {skill}
