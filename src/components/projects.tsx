@@ -1,11 +1,36 @@
-"use client";
 import Image from "next/image";
 
-import { useSiteContent } from "@/hooks/use-site-content";
+const projects = [
+  {
+    name: "keyano",
+    description: "An audio recorder for piano generated music.",
+    href: "https://keyano.vercel.app",
+    image: "https://placehold.co/800x500/101010/737373?text=keyano&font=montserrat",
+  },
+  {
+    name: "distr.",
+    description:
+      "Generates distribution charts and tables based on input information. Currently involves bynomial and poisson distributions.",
+    href: "https://distr.vercel.app",
+    image: "https://placehold.co/800x500/101010/737373?text=distr&font=montserrat",
+  },
+  {
+    name: "higgsprompt",
+    description:
+      "A web marketplace for AI prompt engineers. The backend is done with FastAPI, and the database is managed with Supabase",
+    href: "https://higgsprompt.vercel.app",
+    image: "https://placehold.co/800x500/101010/737373?text=higgsprompt&font=montserrat",
+  },
+  {
+    name: "feynapp",
+    description:
+      "App for an effective learning based on Feynmann technique with an implementation of AI",
+    href: "https://github.com/mugid/feynapp",
+    image: "https://placehold.co/800x500/101010/737373?text=feynapp&font=montserrat",
+  },
+];
 
 export default function Projects() {
-  const { projects } = useSiteContent();
-
   return (
     <div className="mt-12">
       <div className="flex flex-row justify-start items-center gap-2 mb-4">

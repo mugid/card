@@ -2,11 +2,33 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { useSiteContent } from "@/hooks/use-site-content";
+const skills = [
+  "react",
+  "next.js",
+  "tailwindcss",
+  "shadcn/ui",
+  "drizzle",
+  "prisma",
+  "postgresql",
+  "supabase",
+  "vercel",
+  "motion",
+  "zustand",
+  "javascript",
+  "typescript",
+  "node.js",
+  "html",
+  "css",
+  "git",
+  "github",
+  "python",
+  "figma",
+  "illustrator",
+  "framer",
+  "ui/ux",
+];
 
 export default function Skills() {
-  const { skills } = useSiteContent();
-
   return (
     <div className="mt-12">
       <div className="flex flex-row justify-start items-center gap-2 mb-4">
@@ -20,7 +42,7 @@ export default function Skills() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: id * 0.07, duration: 0.4 }}
-            className="font-mono text-sm border border-foreground/10 hover:bg-primary hover:text-background transition-all py-1 px-2 w-max cursor-pointer"
+            className="font-mono text-primary/60 text-sm border border-foreground/10 hover:bg-primary hover:text-background transition-all py-1 px-2 w-max cursor-pointer"
           >
             {skill}
           </motion.div>
