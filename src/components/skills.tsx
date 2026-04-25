@@ -20,7 +20,7 @@ export default function Skills() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: id * 0.07, duration: 0.4 }}
-            className="font-mono text-sm bg-foreground hover:bg-primary transition-all text-background py-1 px-2 w-max rounded-md cursor-pointer"
+            className="font-mono text-sm border border-foreground/10 hover:bg-primary hover:text-background transition-all py-1 px-2 w-max cursor-pointer"
           >
             {skill}
           </motion.div>
