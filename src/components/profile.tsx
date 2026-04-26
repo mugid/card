@@ -1,3 +1,5 @@
+import { RoleScramble } from "./role-scramble";
+
 export default function Profile() {
   return (
     <div className="mt-12 pt-12">
@@ -5,9 +7,7 @@ export default function Profile() {
         <h1 className="font-bold md:text-4xl text-xl text-primary">
           Bek Slambek
         </h1>
-        <p className="text-md font-semibold italic text-foreground/50">
-          designer & engineer
-        </p>
+        <RoleScramble className="text-md font-semibold italic text-foreground/50" />
       </div>
     </div>
   );
