@@ -30,7 +30,7 @@ export default function About() {
         </p>
       </div>
       <nav
-        className="flex w-full shrink-0 flex-col sm:w-44 md:w-48"
+        className="flex shrink-0 md:flex-col justify-between items-end"
         aria-label="Social and resume links"
       >
         {navLinks.map(({ href, label }) => (
@@ -39,7 +39,7 @@ export default function About() {
             href={href}
             rel="noopener noreferrer"
             target="_blank"
-            className="flex min-h-11 w-full flex-1 flex-row justify-end items-center gap-1 font-mono text-sm uppercase tracking-wide text-foreground/80 transition-all hover:text-primary hover:font-semibold sm:min-h-0"
+            className="flex flex-row items-center gap-1 font-mono text-sm uppercase tracking-wide text-foreground/80 transition-all hover:text-primary hover:font-semibold sm:min-h-0"
           >
             <ArrowUpRightRect className="size-[1em] shrink-0" />
             {label}
