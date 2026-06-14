@@ -20,15 +20,8 @@ const projects = [
     description: "Bento portfolio constructor.",
   },
   {
-    name: "stormy",
-    description: "Brand design AI brainstorming tool",
-    href: "https://stormy-pi.vercel.app/",
-  },
-  {
-    name: "distr.",
-    description:
-      "Generates distribution charts and tables based on input information.",
-    href: "https://distr.vercel.app",
+    name: "uso",
+    description: "Labyrinth game inspired by Usogui manga.",
   },
 ];
 
