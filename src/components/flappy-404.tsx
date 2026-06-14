@@ -21,6 +21,7 @@ const GRAVITY = 0.34;
 const FLAP_FORCE = -6.4;
 const PIPE_SPEED = 2.15;
 const PIPE_DISTANCE = 290;
+const BEST_SCORE_STORAGE_KEY = "flappy-404-best-score";
 
 function createPipe(x: number): Pipe {
   return {
@@ -80,8 +81,11 @@ export function Flappy404() {
     }
 
     const nextBest = Math.max(bestRef.current, scoreRef.current);
-    bestRef.current = nextBest;
-    setBest(nextBest);
+    if (nextBest > bestRef.current) {
+      bestRef.current = nextBest;
+      setBest(nextBest);
+      localStorage.setItem(BEST_SCORE_STORAGE_KEY, String(nextBest));
+    }
     syncPhase("ended");
   }, [syncPhase]);
 
@@ -155,6 +159,15 @@ export function Flappy404() {
     },
     [],
   );
+
+  useEffect(() => {
+    const savedBest = Number(localStorage.getItem(BEST_SCORE_STORAGE_KEY));
+
+    if (Number.isFinite(savedBest) && savedBest > 0) {
+      bestRef.current = savedBest;
+      setBest(savedBest);
+    }
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
