@@ -23,30 +23,64 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Bek Slambek | Portfolio",
-  description: "Software engineer and  designer based in Almaty, Kazakhstan.",
+  metadataBase: new URL("https://bekslambek.com"),
+  title: {
+    default: "Bek Slambek | Design Engineer",
+    template: "%s | Bek Slambek",
+  },
+  description:
+    "Bek Slambek is a design engineer exploring AI capabilities, building product interfaces, hiring tools, games, and creative web experiments.",
+  keywords: [
+    "Bek Slambek",
+    "design engineer",
+    "frontend developer",
+    "AI products",
+    "portfolio",
+    "Nazarbayev University",
+    "Hireke",
+  ],
+  authors: [{ name: "Bek Slambek", url: "https://bekslambek.com" }],
+  creator: "Bek Slambek",
+  publisher: "Bek Slambek",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Bek Slambek | Portfolio",
-    description: "Software engineer and designer based in Almaty, Kazakhstan.",
-    url: "https://sbek.tech",
+    title: "Bek Slambek | Design Engineer",
+    description:
+      "Design engineer exploring AI capabilities through product interfaces, hiring workflows, games, and creative web experiments.",
+    url: "https://bekslambek.com",
     siteName: "Bek Slambek",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "portfolio image"
-  }],
+        alt: "Bek Slambek - Design Engineer",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bek Slambek | Portfolio",
-    description: "Software engineer and designer based in Almaty, Kazakhstan.",
-    images: ["/opengraph-image.png"],
-    creator: "bek slambek"
-  }
+    title: "Bek Slambek | Design Engineer",
+    description:
+      "Design engineer exploring AI capabilities through product interfaces and creative web experiments.",
+    images: ["/opengraph-image"],
+    creator: "@sbek22_",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
