@@ -78,7 +78,7 @@ function HighlightLink({
 }) {
   const audioContextRef = useRef<AudioContext | null>(null);
 
-  const playHapticSound = useCallback(() => {
+  const playHapticSound = useCallback(async () => {
     const AudioContextClass =
       window.AudioContext ||
       (
@@ -93,6 +93,18 @@ function HighlightLink({
 
     const context = audioContextRef.current ?? new AudioContextClass();
     audioContextRef.current = context;
+
+    if (context.state === "suspended") {
+      try {
+        await context.resume();
+      } catch {
+        return;
+      }
+    }
+
+    if (context.state !== "running") {
+      return;
+    }
 
     const firstOscillator = context.createOscillator();
     const secondOscillator = context.createOscillator();
@@ -132,10 +144,12 @@ function HighlightLink({
       href={href}
       rel="noopener noreferrer"
       target="_blank"
-      onMouseEnter={playHapticSound}
+      onFocus={() => void playHapticSound()}
+      onPointerDown={() => void playHapticSound()}
+      onPointerEnter={() => void playHapticSound()}
       className="group inline-block h-[1.35em] overflow-hidden align-[-0.24em] font-medium text-foreground transition-colors duration-200 hover:text-primary"
     >
-      <span className="flex h-[2.7em] flex-col transition-transform duration-300 ease-out group-hover:-translate-y-[1.35em]">
+      <span className="flex h-[2.7em] flex-col transition-transform duration-300 ease-out group-hover:translate-y-[-1.35em]">
         {[0, 1].map((item) => (
           <span
             key={item}
