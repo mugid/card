@@ -3,7 +3,6 @@ import { motion } from "motion/react";
 
 import Profile from "@/components/profile";
 import About from "@/components/about";
-import Skills from "@/components/skills";
 import Projects from "@/components/projects";
 
 export default function Home() {
@@ -16,7 +15,7 @@ export default function Home() {
     >
       <Profile />
       <About />
-      <Skills />
+      {/* <Skills /> */}
       <Projects />
       <div className="my-10">
         <p className="text-center">
