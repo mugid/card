@@ -17,19 +17,6 @@ export default function Home() {
       <About />
       {/* <Skills /> */}
       <Projects />
-      <div className="my-10">
-        <p className="font-content tracking-[-0.03em] text-center">
-          contact me via telegram:{" "}
-          <a
-            href="https://t.me/wanderbeck"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-primary hover:font-semibold transition-all"
-          >
-            @wanderbeck
-          </a>
-        </p>
-      </div>
     </motion.main>
   );
 }

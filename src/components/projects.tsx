@@ -3,9 +3,21 @@ import { ArrowUpRightRect } from "@/components/arrow-up-right-rect";
 
 const projects = [
   {
+    name: "hireke",
+    description: "Changing hiring workflows with a product-focused team.",
+  },
+  {
     name: "tigerznuet",
     description: "A platform for students to prepare to NUET exams",
     href: "https://tigerznuet.com",
+  },
+  {
+    name: "azul",
+    description: "Visual brand name generation tool.",
+  },
+  {
+    name: "bloq",
+    description: "Bento portfolio constructor.",
   },
   {
     name: "stormy",
@@ -18,18 +30,6 @@ const projects = [
       "Generates distribution charts and tables based on input information.",
     href: "https://distr.vercel.app",
   },
-  {
-    name: "feynapp",
-    description:
-      "App for an effective learning based on Feynmann technique with an implementation of AI",
-    href: "https://feynapp-one.vercel.app/",
-  },
-  {
-    name: "higgsprompt",
-    description:
-      "A web marketplace for AI prompt engineers. The backend is done with FastAPI, and the database is managed with Supabase",
-    href: "https://higgsprompt.vercel.app",
-  },
 ];
 
 export default function Projects() {
@@ -41,21 +41,44 @@ export default function Projects() {
       </div>
       <div className="flex flex-col gap-1 leading-snug">
         {projects.map((p) => (
-          <a
-            key={`${p.name}-${p.href}`}
-            href={p.href}
-            target="_blank"
-            rel="noreferrer"
-            className="group grid gap-2 py-4 transition-colors hover:text-primary sm:grid-cols-[160px_1fr_auto] sm:items-baseline sm:gap-6"
-          >
-            <h2 className="font-semibold">{p.name}</h2>
-            <p className="font-content tracking-[-0.03em] text-foreground/60 transition-colors group-hover:text-primary/70">
-              {p.description}
-            </p>
-            <ArrowUpRightRect className="hidden size-[1em] text-foreground/40 transition-colors group-hover:text-primary sm:block" />
-          </a>
+          <ProjectRow key={p.name} project={p} />
         ))}
       </div>
+    </div>
+  );
+}
+
+function ProjectRow({ project }: { project: (typeof projects)[number] }) {
+  const content = (
+    <>
+      <h2 className="font-semibold">{project.name}</h2>
+      <p className="font-content tracking-[-0.03em] text-foreground/60 transition-colors group-hover:text-primary/70">
+        {project.description}
+      </p>
+      {"href" in project && project.href ? (
+        <ArrowUpRightRect className="hidden size-[1em] text-foreground/40 transition-colors group-hover:text-primary sm:block" />
+      ) : (
+        <span aria-hidden className="hidden size-[1em] sm:block" />
+      )}
+    </>
+  );
+
+  if ("href" in project && project.href) {
+    return (
+      <a
+        href={project.href}
+        target="_blank"
+        rel="noreferrer"
+        className="group grid gap-2 py-4 transition-colors hover:text-primary sm:grid-cols-[160px_1fr_auto] sm:items-baseline sm:gap-6"
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <div className="group grid gap-2 py-4 sm:grid-cols-[160px_1fr_auto] sm:items-baseline sm:gap-6">
+      {content}
     </div>
   );
 }
