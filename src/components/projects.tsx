@@ -39,7 +39,7 @@ export default function Projects() {
         <Image width={24} height={24} src="icon.svg" alt="icon image" />
         <h1 className="font-semibold text-xl">I work on.</h1>
       </div>
-      <div className="divide-y divide-foreground/10 border-y border-foreground/10 leading-snug">
+      <div className="flex flex-col gap-1 leading-snug">
         {projects.map((p) => (
           <a
             key={`${p.name}-${p.href}`}
@@ -49,7 +49,7 @@ export default function Projects() {
             className="group grid gap-2 py-4 transition-colors hover:text-primary sm:grid-cols-[160px_1fr_auto] sm:items-baseline sm:gap-6"
           >
             <h2 className="font-semibold">{p.name}</h2>
-            <p className="text-foreground/60 transition-colors group-hover:text-primary/70">
+            <p className="font-content tracking-[-0.03em] text-foreground/60 transition-colors group-hover:text-primary/70">
               {p.description}
             </p>
             <ArrowUpRightRect className="hidden size-[1em] text-foreground/40 transition-colors group-hover:text-primary sm:block" />

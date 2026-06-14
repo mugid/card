@@ -18,7 +18,7 @@ export default function Home() {
       {/* <Skills /> */}
       <Projects />
       <div className="my-10">
-        <p className="text-center">
+        <p className="font-content tracking-[-0.03em] text-center">
           contact me via telegram:{" "}
           <a
             href="https://t.me/wanderbeck"

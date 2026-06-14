@@ -10,7 +10,7 @@ const navLinks = [
 export default function About() {
   return (
     <div className="mt-12 flex flex-col gap-8 sm:flex-row sm:items-stretch sm:justify-between sm:gap-10">
-      <div className="md:max-w-[60%] text-justify flex-1 text-md leading-snug space-y-4 text-foreground/60 rounded-lg">
+      <div className="font-content tracking-[-0.03em] md:max-w-[60%] text-justify flex-1 text-md leading-snug space-y-4 text-foreground/60 rounded-lg">
         <p>
           I&apos;m a frontend developer and designer. Currently, a cs student at Nazarbayev
           University. Being in love-hate relationship with{" "}
