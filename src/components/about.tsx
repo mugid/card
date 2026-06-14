@@ -55,7 +55,7 @@ function LinkIconMark({ icon }: { icon: LinkIcon }) {
   if (icon === "telegram") {
     return (
       <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-        <path d="M21.76 3.32 2.93 10.58c-1.28.51-1.27 1.22-.23 1.54l4.84 1.51 1.85 5.68c.24.66.12.92.82.92.54 0 .78-.25 1.08-.54l2.6-2.53 5.4 3.99c.99.55 1.71.27 1.96-.92l3.55-16.75c.36-1.45-.55-2.1-1.5-1.66Zm-3.13 3.84-8.47 7.65-.33 3.54-1.3-4.22 9.41-5.94c.41-.25.79-.11.48.17Z" />
+        <path d="M21.65 4.36 18.8 17.78c-.21.95-.77 1.18-1.56.73l-4.34-3.2-2.1 2.02c-.23.23-.43.43-.88.43l.31-4.43 8.06-7.28c.35-.31-.08-.49-.54-.18L7.8 12.14l-4.28-1.34c-.93-.29-.95-.93.19-1.38L20.45 2.97c.78-.28 1.46.18 1.2 1.39Z" />
       </svg>
     );
   }
@@ -158,21 +158,59 @@ function HighlightText({ children }: { children: React.ReactNode }) {
   );
 }
 
+function TooltipHighlight({
+  children,
+  tooltip,
+}: {
+  children: React.ReactNode;
+  tooltip: React.ReactNode;
+}) {
+  return (
+    <span className="group relative inline-block font-medium text-foreground underline decoration-primary/50 underline-offset-4">
+      {children}
+      <span
+        role="tooltip"
+        className="pointer-events-none absolute left-1/2 bottom-full z-10 mb-1 -translate-x-1/2 translate-y-1 scale-95 whitespace-nowrap rounded-md border border-foreground/15 bg-background px-2.5 py-1 font-sans text-[14px] leading-[1.35] tracking-normal text-foreground opacity-0 shadow-[0_10px_30px_rgba(0,0,0,0.34)] transition-[opacity,transform] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100"
+      >
+        {tooltip}
+        <span
+          aria-hidden
+          className="absolute left-1/2 top-full size-2 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-[1px] border-r border-b border-foreground/15 bg-background"
+        />
+      </span>
+    </span>
+  );
+}
+
 export default function About() {
   return (
-    <div className="mt-12">
+    <div className="mt-6">
       <div className="font-content tracking-[-0.03em] text-justify text-md leading-[1.7] space-y-4 text-foreground/60 rounded-lg">
         <p>
-          I&apos;m a <HighlightText>design engineer</HighlightText> exploring
-          what AI can unlock in real products. I study computer science at{" "}
-          <HighlightText>Nazarbayev University</HighlightText> and try to stay
-          visible on <HighlightLink {...links.github} /> and{" "}
+          I&apos;m a{" "}
+          <TooltipHighlight
+            tooltip={
+              <>
+                focused on making sure design decisions
+                <br />
+                meet technical implementation
+              </>
+            }
+          >
+            design engineer
+          </TooltipHighlight>{" "}
+          exploring what AI can unlock in real products. I study computer science at{" "}
+          <TooltipHighlight tooltip="top 23% in THE WUR, 2026">
+            Nazarbayev University
+          </TooltipHighlight>{" "}
+          and try to stay visible on <HighlightLink {...links.github} /> and{" "}
           <HighlightLink {...links.linkedin} /> for people who might want to
           work with me. I also like posting thoughts on{" "}
           <HighlightLink {...links.twitter} />.
         </p>
         <p>
-          Right now, I&apos;m working with the <HighlightText>Hireke</HighlightText>{" "}
+          Right now, I&apos;m working with the{" "}
+          <TooltipHighlight tooltip="176 users">Hireke</TooltipHighlight>{" "}
           team to rethink how hiring workflows should feel. You can explore the
           design side of my work in my{" "}
           <HighlightLink {...links.designPortfolio} />. For a quick hello,
