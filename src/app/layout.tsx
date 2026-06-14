@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import { Funnel_Display } from "next/font/google";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const funnelDisplay = Funnel_Display({
@@ -94,6 +95,7 @@ export default function RootLayout({
         className={`${funnelDisplay.variable} ${geistMono.variable} ${inter.variable} font-sans antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
