@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 
 const links = {
   github: { href: "https://github.com/mugid", label: "github", icon: "github" },
@@ -179,12 +179,58 @@ function TooltipHighlight({
   children: React.ReactNode;
   tooltip: React.ReactNode;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const tooltipId = useId();
+  const wrapperRef = useRef<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!wrapperRef.current?.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
+
   return (
-    <span className="group relative inline-block font-medium text-foreground underline decoration-primary/50 underline-offset-4">
-      {children}
+    <span
+      ref={wrapperRef}
+      className="group relative inline-block font-medium text-foreground underline decoration-primary/50 underline-offset-4"
+    >
+      <button
+        type="button"
+        aria-describedby={tooltipId}
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((open) => !open)}
+        className="inline cursor-help appearance-none bg-transparent p-0 font-inherit text-inherit underline decoration-primary/50 underline-offset-4"
+      >
+        {children}
+      </button>
       <span
+        id={tooltipId}
         role="tooltip"
-        className="pointer-events-none absolute left-1/2 bottom-full z-10 mb-1 -translate-x-1/2 translate-y-1 scale-95 whitespace-nowrap rounded-md border border-foreground/15 bg-background px-2.5 py-1 font-sans text-[14px] leading-[1.35] tracking-normal text-foreground opacity-0 shadow-[0_10px_30px_rgba(0,0,0,0.34)] transition-[opacity,transform] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100"
+        className={`pointer-events-none absolute left-1/2 bottom-full z-10 mb-1 -translate-x-1/2 whitespace-nowrap rounded-md border border-foreground/15 bg-background px-2.5 py-1 font-sans text-[14px] leading-[1.35] tracking-normal text-foreground shadow-[0_10px_30px_rgba(0,0,0,0.34)] transition-[opacity,transform] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 ${
+          isOpen
+            ? "translate-y-0 scale-100 opacity-100"
+            : "translate-y-1 scale-95 opacity-0"
+        }`}
       >
         {tooltip}
         <span
@@ -199,7 +245,7 @@ function TooltipHighlight({
 export default function About() {
   return (
     <div className="mt-6">
-      <div className="font-content tracking-[-0.03em] text-justify text-md leading-[1.7] space-y-4 text-foreground/60 rounded-lg">
+      <div className="font-content tracking-[-0.03em] text-left text-md leading-[1.7] space-y-4 text-foreground/60 rounded-lg">
         <p>
           I&apos;m a{" "}
           <TooltipHighlight
