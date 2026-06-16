@@ -10,7 +10,7 @@ const links = {
     label: "linkedin",
     icon: "linkedin",
   },
-  twitter: { href: "https://x.com/sbek22_", label: "twitter", icon: "x" },
+  twitter: { href: "https://x.com/bekslambek", label: "twitter", icon: "x" },
   designPortfolio: {
     href: "https://contra.com/bek_slambek_exnck1xg",
     label: "design portfolio",
