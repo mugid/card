@@ -245,7 +245,7 @@ function TooltipHighlight({
 export default function About() {
   return (
     <div className="mt-6">
-      <div className="font-content tracking-[-0.03em] text-left text-md leading-[1.7] space-y-4 text-foreground/60 rounded-lg">
+      <div className="max-w-[68ch] space-y-4 rounded-lg text-left font-content text-[16.5px] leading-[1.72] tracking-[-0.012em] text-foreground/65 sm:text-base sm:leading-[1.7] sm:tracking-[-0.03em] sm:text-foreground/60">
         <p>
           I&apos;m a{" "}
           <TooltipHighlight
