@@ -5,24 +5,26 @@ const projects = [
   {
     name: "hireke",
     description: "Changing hiring workflows with a product-focused team.",
+    href: "https://hireke.com",
   },
   {
     name: "tigerznuet",
     description: "A platform for students to prepare to NUET exams",
-    href: "https://tigerznuet.com",
+    href: "https://tigerznuet.vercel.app",
   },
   {
     name: "azul",
     description: "Visual brand name generation tool.",
+    href: "https://azul-rho.vercel.app",
   },
-  {
-    name: "bloq",
-    description: "Bento portfolio constructor.",
-  },
-  {
-    name: "uso",
-    description: "Labyrinth game inspired by Usogui manga.",
-  },
+  // {
+  //   name: "bloq",
+  //   description: "Bento portfolio constructor.",
+  // },
+  // {
+  //   name: "uso",
+  //   description: "Labyrinth game inspired by Usogui manga.",
+  // },
 ];
 
 export default function Projects() {
