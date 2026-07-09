@@ -11,11 +11,6 @@ const links = {
     icon: "linkedin",
   },
   twitter: { href: "https://x.com/bekslambek", label: "twitter", icon: "x" },
-  designPortfolio: {
-    href: "https://contra.com/bek_slambek_exnck1xg",
-    label: "design portfolio",
-    icon: "contra",
-  },
   telegram: {
     href: "https://t.me/wanderbeck",
     label: "telegram",
@@ -147,7 +142,7 @@ function HighlightLink({
       onFocus={() => void playHapticSound()}
       onPointerDown={() => void playHapticSound()}
       onPointerEnter={() => void playHapticSound()}
-      className="group inline-block h-[1.35em] overflow-hidden align-[-0.24em] font-medium text-foreground transition-colors duration-200 hover:text-primary"
+      className="group inline-block h-[1.35em] translate-y-[0.28em] overflow-hidden align-baseline font-medium leading-[inherit] text-foreground transition-colors duration-200 hover:text-primary"
     >
       <span className="flex h-[2.7em] flex-col transition-transform duration-300 ease-out group-hover:translate-y-[-1.35em]">
         {[0, 1].map((item) => (
@@ -259,7 +254,10 @@ export default function About() {
           >
             design engineer
           </TooltipHighlight>{" "}
-          exploring what AI can unlock in real products. I study computer science at{" "}
+          exploring what AI can unlock in real products.
+        </p>
+        <p>
+          I study computer science at{" "}
           <TooltipHighlight tooltip="top 23% in THE WUR, 2026">
             Nazarbayev University
           </TooltipHighlight>{" "}
@@ -271,10 +269,8 @@ export default function About() {
         <p>
           Right now, I&apos;m working with the{" "}
           <TooltipHighlight tooltip="176 users">Hireke</TooltipHighlight>{" "}
-          team to rethink how hiring workflows should feel. You can explore the
-          design side of my work in my{" "}
-          <HighlightLink {...links.designPortfolio} />. For a quick hello,
-          message me on <HighlightLink {...links.telegram} />.
+          team to rethink how hiring workflows should feel. For a quick hello,
+          message me on <HighlightLink {...links.telegram} />
         </p>
       </div>
     </div>

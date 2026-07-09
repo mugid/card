@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ArrowUpRightRect } from "@/components/arrow-up-right-rect";
 
 const projects = [
   {
@@ -32,7 +31,7 @@ export default function Projects() {
     <div className="mt-12">
       <div className="flex flex-row justify-start items-center gap-2 mb-4">
         <Image width={24} height={24} src="icon.svg" alt="icon image" />
-        <h1 className="font-semibold text-xl">I work on.</h1>
+        <h1 className="font-semibold text-xl">I&apos;m proud of.</h1>
       </div>
       <div className="flex flex-col gap-1 leading-snug">
         {projects.map((p) => (
@@ -50,11 +49,6 @@ function ProjectRow({ project }: { project: (typeof projects)[number] }) {
       <p className="font-content tracking-[-0.03em] text-foreground/60 transition-colors group-hover:text-primary/70">
         {project.description}
       </p>
-      {"href" in project && project.href ? (
-        <ArrowUpRightRect className="hidden size-[1em] text-foreground/40 transition-colors group-hover:text-primary sm:block" />
-      ) : (
-        <span aria-hidden className="hidden size-[1em] sm:block" />
-      )}
     </>
   );
 
@@ -64,7 +58,7 @@ function ProjectRow({ project }: { project: (typeof projects)[number] }) {
         href={project.href}
         target="_blank"
         rel="noreferrer"
-        className="group grid gap-2 py-4 transition-colors hover:text-primary sm:grid-cols-[160px_1fr_auto] sm:items-baseline sm:gap-6"
+        className="group block py-4 transition-colors hover:text-primary"
       >
         {content}
       </a>
@@ -72,7 +66,7 @@ function ProjectRow({ project }: { project: (typeof projects)[number] }) {
   }
 
   return (
-    <div className="group grid gap-2 py-4 sm:grid-cols-[160px_1fr_auto] sm:items-baseline sm:gap-6">
+    <div className="group py-4">
       {content}
     </div>
   );
