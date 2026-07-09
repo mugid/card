@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const projects = [
   {
     name: "hireke",
@@ -29,9 +27,8 @@ const projects = [
 export default function Projects() {
   return (
     <div className="mt-12">
-      <div className="flex flex-row justify-start items-center gap-2 mb-4">
-        <Image width={24} height={24} src="icon.svg" alt="icon image" />
-        <h1 className="font-semibold text-xl">I&apos;m proud of.</h1>
+      <div className="mb-4">
+        <h1 className="font-semibold text-base text-primary">I&apos;m proud of.</h1>
       </div>
       <div className="flex flex-col gap-1 leading-snug">
         {projects.map((p) => (
@@ -58,7 +55,7 @@ function ProjectRow({ project }: { project: (typeof projects)[number] }) {
         href={project.href}
         target="_blank"
         rel="noreferrer"
-        className="group block py-4 transition-colors hover:text-primary"
+        className="group block pb-4 transition-colors hover:text-primary"
       >
         {content}
       </a>
@@ -66,7 +63,7 @@ function ProjectRow({ project }: { project: (typeof projects)[number] }) {
   }
 
   return (
-    <div className="group py-4">
+    <div className="group pb-4">
       {content}
     </div>
   );

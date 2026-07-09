@@ -139,7 +139,7 @@ export function Flappy404() {
       ctx.restore();
 
       ctx.fillStyle = "#ededed";
-      ctx.font = "700 24px var(--font-funnel-display), sans-serif";
+      ctx.font = "700 24px var(--font-dm-sans), sans-serif";
       ctx.fillText(String(scoreRef.current), 28, 42);
 
       if (phaseRef.current !== "playing") {
@@ -147,7 +147,7 @@ export function Flappy404() {
         ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
         ctx.fillStyle = "#ededed";
-        ctx.font = "700 54px var(--font-funnel-display), sans-serif";
+        ctx.font = "700 54px var(--font-dm-sans), sans-serif";
         ctx.textAlign = "center";
         ctx.fillText(
           `${phaseRef.current === "idle" ? "start" : "restart"} [space]`,

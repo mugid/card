@@ -11,7 +11,7 @@ export default function Home() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen mx-auto max-w-xl px-6 sm:px-10"
+      className="flow-root mx-auto h-screen max-w-xl px-6 sm:px-10"
     >
       <Profile />
       <About />

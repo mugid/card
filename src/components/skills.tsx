@@ -33,7 +33,7 @@ export default function Skills() {
     <div className="mt-12">
       <div className="flex flex-row justify-start items-center gap-2 mb-4">
         <Image width={24} height={24} src="icon.svg" alt="icon image" />
-        <h1 className="font-semibold text-xl">Skills</h1>
+        <h1 className="font-semibold text-base">Skills</h1>
       </div>
       <div className="flex flex-wrap gap-2 columns-2xl">
         {skills.map((skill, id) => (
