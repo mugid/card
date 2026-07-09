@@ -6,7 +6,7 @@
   --color-primary: var(--primary);
   --font-sans: var(--font-funnel-display);
   --font-mono: var(--font-geist-mono);
-  --font-content: var(--font-inter);
+  --font-content: var(--font-dm-sans);
 }
 
 :root {

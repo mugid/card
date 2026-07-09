@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import { Funnel_Display } from "next/font/google";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -92,7 +92,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${funnelDisplay.variable} ${geistMono.variable} ${inter.variable} font-sans antialiased`}
+        className={`${funnelDisplay.variable} ${geistMono.variable} ${dmSans.variable} font-sans antialiased`}
       >
         {children}
         <Analytics />
