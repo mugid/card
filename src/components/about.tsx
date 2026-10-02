@@ -159,14 +159,6 @@ function HighlightLink({
   );
 }
 
-function HighlightText({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="font-medium text-foreground underline decoration-primary/50 underline-offset-4">
-      {children}
-    </span>
-  );
-}
-
 function TooltipHighlight({
   children,
   tooltip,

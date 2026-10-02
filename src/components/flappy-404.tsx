@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 type GamePhase = "idle" | "playing" | "ended";
 
@@ -22,6 +22,21 @@ const FLAP_FORCE = -6.4;
 const PIPE_SPEED = 2.15;
 const PIPE_DISTANCE = 290;
 const BEST_SCORE_STORAGE_KEY = "flappy-404-best-score";
+const BEST_SCORE_CHANGE_EVENT = "flappy-404-best-score-change";
+
+function getBestScore() {
+  const score = Number(localStorage.getItem(BEST_SCORE_STORAGE_KEY));
+  return Number.isFinite(score) && score > 0 ? score : 0;
+}
+
+function subscribeToBestScore(callback: () => void) {
+  window.addEventListener("storage", callback);
+  window.addEventListener(BEST_SCORE_CHANGE_EVENT, callback);
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener(BEST_SCORE_CHANGE_EVENT, callback);
+  };
+}
 
 function createPipe(x: number): Pipe {
   return {
@@ -43,10 +58,9 @@ export function Flappy404() {
     createPipe(CANVAS_WIDTH + 80 + PIPE_DISTANCE * 2),
   ]);
   const scoreRef = useRef(0);
-  const bestRef = useRef(0);
   const [phase, setPhase] = useState<GamePhase>("idle");
   const [score, setScore] = useState(0);
-  const [best, setBest] = useState(0);
+  const best = useSyncExternalStore(subscribeToBestScore, getBestScore, () => 0);
 
   const syncPhase = useCallback((nextPhase: GamePhase) => {
     phaseRef.current = nextPhase;
@@ -80,11 +94,11 @@ export function Flappy404() {
       return;
     }
 
-    const nextBest = Math.max(bestRef.current, scoreRef.current);
-    if (nextBest > bestRef.current) {
-      bestRef.current = nextBest;
-      setBest(nextBest);
+    const previousBest = getBestScore();
+    if (scoreRef.current > previousBest) {
+      const nextBest = scoreRef.current;
       localStorage.setItem(BEST_SCORE_STORAGE_KEY, String(nextBest));
+      window.dispatchEvent(new Event(BEST_SCORE_CHANGE_EVENT));
     }
     syncPhase("ended");
   }, [syncPhase]);
@@ -159,15 +173,6 @@ export function Flappy404() {
     },
     [],
   );
-
-  useEffect(() => {
-    const savedBest = Number(localStorage.getItem(BEST_SCORE_STORAGE_KEY));
-
-    if (Number.isFinite(savedBest) && savedBest > 0) {
-      bestRef.current = savedBest;
-      setBest(savedBest);
-    }
-  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
