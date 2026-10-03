@@ -1,14 +1,16 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
-export const alt = "Bek Slambek - Design Engineer";
-export const size = {
-  width: 1200,
-  height: 630,
-};
+export const runtime = "nodejs";
+export const alt = "Bek Slambek — design engineer";
+export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const logo = await readFile(path.join(process.cwd(), "public/logo.svg"));
+  const logoUrl = `data:image/svg+xml;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -17,116 +19,36 @@ export default function Image() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
           background: "#fffdf8",
           color: "#000000",
-          padding: "72px",
+          padding: "64px",
           fontFamily: "Arial, sans-serif",
-          position: "relative",
+          letterSpacing: "-0.02em",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.055) 1px, transparent 1px)",
-            backgroundSize: "42px 42px",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            right: 72,
-            top: 72,
-            width: 132,
-            height: 132,
-            border: "1px solid rgba(255,243,176,0.55)",
-            transform: "rotate(8deg)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            right: 102,
-            top: 104,
-            width: 132,
-            height: 132,
-            border: "1px solid rgba(0,0,0,0.16)",
-            transform: "rotate(-7deg)",
-          }}
-        />
-
-        <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 14,
-              color: "#000000",
-              fontSize: 28,
-            }}
-          >
-            <span
-              style={{
-                width: 14,
-                height: 14,
-                background: "#fff3b0",
-                display: "block",
-              }}
-            />
-            bekslambek.com
-          </div>
-          <h1
-            style={{
-              margin: 0,
-              color: "#000000",
-              fontSize: 96,
-              lineHeight: 0.96,
-              letterSpacing: "-0.04em",
-              fontWeight: 800,
-              maxWidth: 780,
-            }}
-          >
-            Bek Slambek
-          </h1>
-          <p
-            style={{
-              margin: 0,
-              color: "#000000",
-              fontSize: 34,
-              lineHeight: 1.2,
-              letterSpacing: "-0.03em",
-              maxWidth: 760,
-            }}
-          >
-            Design engineer exploring AI capabilities through product interfaces,
-            hiring workflows, games, and creative web experiments.
-          </p>
+        <img src={logoUrl} alt="" width={124} height={96} />
+        <div style={{ marginTop: 52, fontSize: 40, lineHeight: 1.2 }}>
+          hi, i&apos;m Bek
         </div>
-
         <div
           style={{
             display: "flex",
-            gap: 14,
-            color: "#000000",
-            fontSize: 24,
-            fontWeight: 700,
+            flexDirection: "column",
+            marginTop: 32,
+            maxWidth: 1030,
+            fontSize: 32,
+            lineHeight: 1.2,
           }}
         >
-          {["AI products", "Hireke", "Frontend", "Design systems"].map(
-            (item) => (
-              <span
-                key={item}
-                style={{
-                  background: "#fff3b0",
-                  padding: "10px 16px",
-                }}
-              >
-                {item}
-              </span>
-            ),
-          )}
+          <span>
+            a design engineer. currently, building Hireke to make some cash.
+          </span>
+          <span>
+            i’m also studying computer science at Nazarbayev University.
+          </span>
+        </div>
+        <div style={{ marginTop: "auto", fontSize: 24 }}>
+          x / github / linkedin
         </div>
       </div>
     ),

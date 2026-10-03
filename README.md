@@ -21,7 +21,7 @@ pnpm exec tsc --noEmit
 pnpm build
 ```
 
-The homepage is in `src/app/page.tsx`, with content in `src/components`. The 404 page is in `src/app/not-found.tsx`.
+The homepage is in `src/app/page.tsx`. The 404 page is in `src/app/not-found.tsx`. `public/sounds/` is reserved for future audio assets.
 
 ## Ideas
 

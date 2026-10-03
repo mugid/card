@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
-import { DM_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -23,15 +16,13 @@ export const metadata: Metadata = {
     template: "%s | Bek Slambek",
   },
   description:
-    "Bek Slambek is a design engineer exploring AI capabilities, building product interfaces, hiring tools, games, and creative web experiments.",
+    "Bek Slambek is a design engineer building Hireke and studying computer science at Nazarbayev University.",
   keywords: [
     "Bek Slambek",
     "design engineer",
-    "frontend developer",
-    "AI products",
+    "Hireke",
     "portfolio",
     "Nazarbayev University",
-    "Hireke",
   ],
   authors: [{ name: "Bek Slambek", url: "https://bekslambek.com" }],
   creator: "Bek Slambek",
@@ -42,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bek Slambek | Design Engineer",
     description:
-      "Design engineer exploring AI capabilities through product interfaces, hiring workflows, games, and creative web experiments.",
+      "A design engineer building Hireke and studying computer science at Nazarbayev University.",
     url: "https://bekslambek.com",
     siteName: "Bek Slambek",
     images: [
@@ -60,9 +51,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bek Slambek | Design Engineer",
     description:
-      "Design engineer exploring AI capabilities through product interfaces and creative web experiments.",
+      "A design engineer building Hireke and studying computer science at Nazarbayev University.",
     images: ["/opengraph-image"],
-    creator: "@sbek22_",
+    creator: "@bekslambek",
   },
   robots: {
     index: true,
@@ -84,9 +75,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistMono.variable} ${dmSans.variable} font-sans antialiased`}
-      >
+      <body className={`${inter.variable} antialiased`}>
         {children}
         <Analytics />
       </body>

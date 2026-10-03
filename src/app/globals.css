@@ -3,18 +3,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --font-sans: var(--font-dm-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-content: var(--font-dm-sans);
+  --font-sans: var(--font-inter);
 }
 
 :root {
   --background: #fffdf8;
   --foreground: #000000;
-  --primary: #000000;
 }
-
 
 @layer base {
   html,
@@ -23,6 +18,6 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
   }
 }
