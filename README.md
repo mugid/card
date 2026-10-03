@@ -21,7 +21,7 @@ pnpm exec tsc --noEmit
 pnpm build
 ```
 
-The homepage is in `src/app/page.tsx`, with content in `src/components`. The custom 404 game is in `src/components/flappy-404.tsx`.
+The homepage is in `src/app/page.tsx`, with content in `src/components`. The 404 page is in `src/app/not-found.tsx`.
 
 ## Ideas
 
