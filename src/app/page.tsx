@@ -53,6 +53,7 @@ export default function Home() {
               </span>
               <Link
                 href={page.href}
+                data-cuelume-navigate
                 className="hover:underline hover:underline-offset-4"
               >
                 {page.name}
@@ -68,6 +69,7 @@ export default function Home() {
             {index > 0 && <span aria-hidden="true">/ </span>}
             <a
               href={social.href}
+              data-cuelume-tap
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline hover:underline-offset-4"

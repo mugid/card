@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SoundToggle } from "@/components/sound-toggle";
 import "./globals.css";
 
 const inter = Inter({
@@ -75,8 +76,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased`} data-cuelume-emphasis="subtle">
         {children}
+        <SoundToggle />
         <Analytics />
       </body>
     </html>

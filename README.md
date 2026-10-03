@@ -23,6 +23,8 @@ pnpm build
 
 The homepage is in `src/app/page.tsx`. The writing and words pages are in `src/app/blog/page.tsx` and `src/app/words/page.tsx`. The 404 page is in `src/app/not-found.tsx`. `public/sounds/` is reserved for future audio assets.
 
+Interaction sounds use Cuelume. The sound toggle persists its setting in the browser.
+
 ## Ideas
 
 - Add internationalization.
