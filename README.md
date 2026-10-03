@@ -1,6 +1,6 @@
 # bekslambek.com
 
-Personal portfolio built with Next.js 16, React 19, Tailwind CSS 4, and Motion.
+Personal portfolio built with Next.js 16, React 19, and Tailwind CSS 4.
 
 ## Local development
 
@@ -21,10 +21,9 @@ pnpm exec tsc --noEmit
 pnpm build
 ```
 
-The homepage is in `src/app/page.tsx`. The 404 page is in `src/app/not-found.tsx`. `public/sounds/` is reserved for future audio assets.
+The homepage is in `src/app/page.tsx`. The writing and words pages are in `src/app/blog/page.tsx` and `src/app/words/page.tsx`. The 404 page is in `src/app/not-found.tsx`. `public/sounds/` is reserved for future audio assets.
 
 ## Ideas
 
 - Add internationalization.
-- Add a blog.
 - Add an interests section.

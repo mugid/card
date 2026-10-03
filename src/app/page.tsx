@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const pages = [
-  { updated: "oct 4", name: "things i write about" },
-  { updated: "oct 6", name: "words i like" },
+  { updated: "oct 4", name: "things i write about", href: "/blog" },
+  { updated: "oct 6", name: "words i like", href: "/words" },
 ];
 
 const socials = [
@@ -50,7 +51,12 @@ export default function Home() {
               <span className="text-sm tracking-normal text-[#909090]">
                 {page.updated}
               </span>
-              <span>{page.name}</span>
+              <Link
+                href={page.href}
+                className="hover:underline hover:underline-offset-4"
+              >
+                {page.name}
+              </Link>
             </li>
           ))}
         </ul>
