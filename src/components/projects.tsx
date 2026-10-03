@@ -43,7 +43,7 @@ function ProjectRow({ project }: { project: (typeof projects)[number] }) {
   const content = (
     <>
       <h2 className="font-semibold">{project.name}</h2>
-      <p className="font-content tracking-[-0.03em] text-foreground/60 transition-colors group-hover:text-primary/70">
+      <p className="font-content tracking-[-0.03em] text-foreground">
         {project.description}
       </p>
     </>

@@ -107,10 +107,10 @@ export function Flappy404() {
     (ctx: CanvasRenderingContext2D) => {
       ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-      ctx.fillStyle = "#101010";
+      ctx.fillStyle = "#fffdf8";
       ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-      ctx.strokeStyle = "rgba(237,237,237,0.06)";
+      ctx.strokeStyle = "rgba(0,0,0,0.06)";
       ctx.lineWidth = 1;
       for (let x = 0; x <= CANVAS_WIDTH; x += 36) {
         ctx.beginPath();
@@ -144,23 +144,23 @@ export function Flappy404() {
       ctx.save();
       ctx.translate(PLAYER_X, playerY);
       ctx.rotate(tilt);
-      ctx.fillStyle = "#ededed";
+      ctx.fillStyle = "#000000";
       ctx.fillRect(-PLAYER_SIZE / 2, -PLAYER_SIZE / 2, PLAYER_SIZE, PLAYER_SIZE);
-      ctx.fillStyle = "#101010";
+      ctx.fillStyle = "#fffdf8";
       ctx.fillRect(2, -7, 5, 5);
       ctx.fillStyle = "#fff3b0";
       ctx.fillRect(-20, -3, 14, 6);
       ctx.restore();
 
-      ctx.fillStyle = "#ededed";
+      ctx.fillStyle = "#000000";
       ctx.font = "700 24px var(--font-dm-sans), sans-serif";
       ctx.fillText(String(scoreRef.current), 28, 42);
 
       if (phaseRef.current !== "playing") {
-        ctx.fillStyle = "rgba(16,16,16,0.72)";
+        ctx.fillStyle = "rgba(255,253,248,0.72)";
         ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-        ctx.fillStyle = "#ededed";
+        ctx.fillStyle = "#000000";
         ctx.font = "700 54px var(--font-dm-sans), sans-serif";
         ctx.textAlign = "center";
         ctx.fillText(
@@ -257,13 +257,13 @@ export function Flappy404() {
         <div>
           <Link
             href="/"
-            className="font-mono text-xs tracking-normal text-foreground/40 transition-colors hover:text-primary"
+            className="font-mono text-xs tracking-normal text-foreground"
           >
             &larr; return back
           </Link>
           <h1 className="mt-1 text-2xl font-bold text-primary">404</h1>
         </div>
-        <div className="text-right font-mono text-sm leading-snug text-foreground/55">
+        <div className="text-right font-mono text-sm leading-snug text-foreground">
           <div>current: {score}</div>
           <div>highest score: {best}</div>
         </div>
@@ -272,7 +272,7 @@ export function Flappy404() {
       <button
         type="button"
         onClick={flap}
-        className="group relative aspect-[720/460] w-full overflow-hidden border border-foreground/10 bg-[#101010] text-left outline-none transition-colors hover:border-primary/50 active:scale-[0.995]"
+        className="group relative aspect-[720/460] w-full overflow-hidden border border-foreground/10 bg-background text-left outline-none transition-colors hover:border-primary/50 active:scale-[0.995]"
         aria-label={phase === "playing" ? "Flap" : "Start 404 game"}
       >
         <canvas

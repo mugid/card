@@ -85,7 +85,7 @@ export function RoleScramble({ className }: RoleScrambleProps) {
   if (reducedMotion) {
     return (
       <p className={className}>
-        designer<span className="text-foreground/35 not-italic"> & </span>
+        designer<span className="text-foreground not-italic"> & </span>
         engineer
       </p>
     );

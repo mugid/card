@@ -18,8 +18,8 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#101010",
-          color: "#ededed",
+          background: "#fffdf8",
+          color: "#000000",
           padding: "72px",
           fontFamily: "Arial, sans-serif",
           position: "relative",
@@ -30,7 +30,7 @@ export default function Image() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "linear-gradient(rgba(237,237,237,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(237,237,237,0.055) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,0,0,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.055) 1px, transparent 1px)",
             backgroundSize: "42px 42px",
           }}
         />
@@ -52,7 +52,7 @@ export default function Image() {
             top: 104,
             width: 132,
             height: 132,
-            border: "1px solid rgba(237,237,237,0.16)",
+            border: "1px solid rgba(0,0,0,0.16)",
             transform: "rotate(-7deg)",
           }}
         />
@@ -63,7 +63,7 @@ export default function Image() {
               display: "flex",
               alignItems: "center",
               gap: 14,
-              color: "rgba(237,237,237,0.62)",
+              color: "#000000",
               fontSize: 28,
             }}
           >
@@ -80,7 +80,7 @@ export default function Image() {
           <h1
             style={{
               margin: 0,
-              color: "#fff3b0",
+              color: "#000000",
               fontSize: 96,
               lineHeight: 0.96,
               letterSpacing: "-0.04em",
@@ -93,7 +93,7 @@ export default function Image() {
           <p
             style={{
               margin: 0,
-              color: "rgba(237,237,237,0.76)",
+              color: "#000000",
               fontSize: 34,
               lineHeight: 1.2,
               letterSpacing: "-0.03em",
@@ -109,7 +109,7 @@ export default function Image() {
           style={{
             display: "flex",
             gap: 14,
-            color: "#101010",
+            color: "#000000",
             fontSize: 24,
             fontWeight: 700,
           }}
@@ -119,7 +119,7 @@ export default function Image() {
               <span
                 key={item}
                 style={{
-                  background: "#ededed",
+                  background: "#fff3b0",
                   padding: "10px 16px",
                 }}
               >
