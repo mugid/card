@@ -14,7 +14,7 @@ const socials = [
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-[1440px] px-[clamp(24px,5.4vw,64px)] pb-20 pt-[120px] text-base tracking-[-0.02em]">
+    <main className="mx-auto w-full max-w-[1440px] px-[clamp(24px,5.4vw,64px)] pb-20 pt-[120px] text-sm tracking-[-0.02em] sm:text-base">
       <Image
         src="/logo.svg"
         alt="Bek Slambek"
@@ -24,11 +24,10 @@ export default function Home() {
         className="h-12 w-auto"
       />
 
-      <section aria-label="About" className="mt-12 max-w-[720px] leading-[1.2]">
+      <section aria-label="About" className="mt-12 w-full leading-[1.2] sm:max-w-[476px]">
         <h1 className="font-normal">hi, i&apos;m Bek</h1>
         <p className="mt-9">
           a design engineer. currently, building Hireke to make some cash.
-          <br />
           i’m also studying computer science at Nazarbayev University.
         </p>
       </section>
