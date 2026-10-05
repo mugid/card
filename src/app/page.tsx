@@ -14,7 +14,7 @@ const socials = [
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-[1440px] px-[clamp(24px,5.4vw,64px)] pb-20 pt-[120px] text-sm tracking-[-0.02em] sm:text-base">
+    <main className="mx-auto w-full max-w-7xl px-6 pt-30 pb-20 text-sm tracking-tight sm:text-base md:px-10 xl:px-16">
       <Image
         src="/logo.svg"
         alt="Bek Slambek"
@@ -24,7 +24,7 @@ export default function Home() {
         className="h-12 w-auto"
       />
 
-      <section aria-label="About" className="mt-12 w-full leading-[1.2] sm:max-w-[476px]">
+      <section aria-label="About" className="mt-12 w-full leading-tight sm:max-w-md">
         <h1 className="font-normal">hi, i&apos;m Bek</h1>
         <p className="mt-9">
           a design engineer. currently, building Hireke to make some cash.
@@ -35,7 +35,7 @@ export default function Home() {
       <section aria-labelledby="pages-heading" className="mt-16">
         <h2
           id="pages-heading"
-          className="text-sm leading-[1.2] tracking-normal text-[#909090]"
+          className="text-sm leading-tight tracking-normal text-neutral-400"
         >
           last
           <br />
@@ -45,9 +45,9 @@ export default function Home() {
           {pages.map((page) => (
             <li
               key={page.name}
-              className="grid grid-cols-[max-content_1fr] items-baseline gap-x-12"
+              className="flex items-baseline gap-12"
             >
-              <span className="text-sm tracking-normal text-[#909090]">
+              <span className="shrink-0 text-sm tracking-normal text-neutral-400">
                 {page.updated}
               </span>
               <Link
