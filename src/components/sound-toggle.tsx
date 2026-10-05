@@ -45,7 +45,7 @@ export function SoundToggle() {
     const nextEnabled = !enabled;
     inMemoryEnabled = nextEnabled;
     setEnabled(nextEnabled);
-    if (nextEnabled) play("toggle", { emphasis: "subtle" });
+    if (nextEnabled) play("select", { emphasis: "subtle" });
 
     try {
       window.localStorage.setItem(STORAGE_KEY, String(nextEnabled));
@@ -61,7 +61,7 @@ export function SoundToggle() {
       type="button"
       aria-pressed={enabled}
       onClick={toggle}
-      data-cuelume-toggle
+      data-cuelume-select
       className="fixed bottom-6 right-[clamp(24px,5.4vw,64px)] z-10 bg-background text-sm tracking-normal text-[#909090] hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4"
     >
       sound {enabled ? "on" : "off"}

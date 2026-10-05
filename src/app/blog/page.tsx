@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <main className="mx-auto w-full max-w-[1440px] px-[clamp(24px,5.4vw,64px)] pb-20 pt-[120px] text-base tracking-[-0.02em]">
-      <Link href="/" aria-label="Back to home" data-cuelume-navigate className="inline-block">
+      <Link href="/" aria-label="Back to home" data-cuelume-select className="inline-block">
         <Image src="/logo.svg" alt="" width={62} height={48} priority />
       </Link>
 
@@ -26,7 +26,7 @@ export default function BlogPage() {
         <p className="mt-9 text-[#909090]">nothing published yet.</p>
       </section>
 
-      <Link href="/" data-cuelume-navigate className="mt-16 inline-block hover:underline hover:underline-offset-4">
+      <Link href="/" data-cuelume-select className="mt-16 inline-block hover:underline hover:underline-offset-4">
         back home
       </Link>
     </main>

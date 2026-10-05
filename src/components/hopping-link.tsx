@@ -275,6 +275,9 @@ export function HoppingLink({ label, href }: { label: string; href: string }) {
     <a
       ref={rootRef}
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-cuelume-select
       onPointerMove={onPointerMove}
       onPointerLeave={() => {
         sim.current.px = NaN;

@@ -22,7 +22,8 @@
   }
 }
 
-.page-timeline li {
+.page-timeline li,
+.social-links > span {
   transition: opacity 180ms ease;
 }
 
@@ -31,8 +32,14 @@
   opacity: 0.5;
 }
 
+.social-links:has(a:is(:hover, :focus-visible))
+  > span:not(:has(a:is(:hover, :focus-visible))) {
+  opacity: 0.5;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .page-timeline li {
+  .page-timeline li,
+  .social-links > span {
     transition: none;
   }
 }

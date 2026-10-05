@@ -63,7 +63,7 @@ export default function Home() {
               </span>
               <Link
                 href={page.href}
-                data-cuelume-navigate
+                data-cuelume-select
                 className="hover:underline hover:underline-offset-4"
               >
                 {page.name}
@@ -73,13 +73,13 @@ export default function Home() {
         </ul>
       </section>
 
-      <nav aria-label="Social links" className="mt-16 flex flex-wrap gap-x-1">
+      <nav aria-label="Social links" className="social-links mt-16 flex flex-wrap gap-x-1">
         {socials.map((social, index) => (
           <span key={social.name}>
             {index > 0 && <span aria-hidden="true">/ </span>}
             <a
               href={social.href}
-              data-cuelume-tap
+              data-cuelume-select
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline hover:underline-offset-4"

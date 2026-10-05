@@ -5,7 +5,7 @@ export default function NotFound() {
     <main className="mx-auto max-w-xl px-6 pt-20 sm:px-10">
       <h1 className="text-2xl font-bold">404</h1>
       <p className="mt-4">Page not found.</p>
-      <Link href="/" data-cuelume-navigate className="mt-6 inline-block underline underline-offset-4">
+      <Link href="/" data-cuelume-select className="mt-6 inline-block underline underline-offset-4">
         Back to home
       </Link>
     </main>
