@@ -41,7 +41,7 @@ export default function Home() {
           <br />
           updated
         </h2>
-        <ul className="page-timeline mt-8 space-y-2">
+        <ul className="page-timeline mt-4 space-y-2">
           {pages.map((page) => (
             <li
               key={page.name}
