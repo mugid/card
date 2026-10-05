@@ -1,5 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HoppingLink } from "@/components/hopping-link";
+
+const aboutLinks = {
+  hireke: { label: "Hireke", href: "https://hireke.com" },
+  university: {
+    label: "Nazarbayev University",
+    href: "https://nu.edu.kz",
+  },
+};
 
 const pages = [
   { updated: "oct 6", name: "words i like", href: "/words" },
@@ -27,8 +36,10 @@ export default function Home() {
       <section aria-label="About" className="mt-12 w-full leading-tight sm:max-w-120">
         <h1 className="font-normal">hi, i&apos;m Bek</h1>
         <p className="mt-9">
-          a design engineer. currently, building Hireke to make some cash.
-          i’m also studying computer science at Nazarbayev University.
+          a design engineer. currently, building{" "}
+          <HoppingLink {...aboutLinks.hireke} />{" "}
+          to make some cash. i’m also studying computer science at{" "}
+          <HoppingLink {...aboutLinks.university} />.
         </p>
       </section>
 
