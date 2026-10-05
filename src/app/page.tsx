@@ -24,7 +24,7 @@ export default function Home() {
         className="h-12 w-auto"
       />
 
-      <section aria-label="About" className="mt-12 w-full leading-tight sm:max-w-md">
+      <section aria-label="About" className="mt-12 w-full leading-tight sm:max-w-120">
         <h1 className="font-normal">hi, i&apos;m Bek</h1>
         <p className="mt-9">
           a design engineer. currently, building Hireke to make some cash.
