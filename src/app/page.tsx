@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const pages = [
-  { updated: "oct 4", name: "things i write about", href: "/blog" },
   { updated: "oct 6", name: "words i like", href: "/words" },
+  { updated: "oct 4", name: "things i write about", href: "/blog" },
 ];
 
 const socials = [
@@ -42,7 +42,7 @@ export default function Home() {
           <br />
           updated
         </h2>
-        <ul className="mt-8 space-y-2">
+        <ul className="page-timeline mt-8 space-y-2">
           {pages.map((page) => (
             <li
               key={page.name}

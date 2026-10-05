@@ -21,3 +21,18 @@
     @apply bg-background font-sans text-foreground;
   }
 }
+
+.page-timeline li {
+  transition: opacity 180ms ease;
+}
+
+.page-timeline:has(a:is(:hover, :focus-visible))
+  li:not(:has(a:is(:hover, :focus-visible))) {
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-timeline li {
+    transition: none;
+  }
+}
